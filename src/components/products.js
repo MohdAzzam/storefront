@@ -32,8 +32,7 @@ const Products = (props) => {
 
 
                 {
-                    props.products ? props.products.show.map((item,indx) => {
-
+                 props.categories.active? props.products.show.map((item,indx) => {
                         return (
                             <Grid item xs={3}   key={indx}>
                                 <Card className={classes.root} >

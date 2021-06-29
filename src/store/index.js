@@ -4,8 +4,8 @@ import categories from './categories';
 import products from './product';
 // enable an extension on ur browser for redux store checking.. 
 // import {composeWithDevTools} from 'redux-devtools-extension';
-
-let reducers = combineReducers({categories,products});
+import cart from './cart';
+let reducers = combineReducers({categories,products,cart});
 
 const store = () => {
     return createStore(reducers)

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 let initialState = {
     categories: ['FOOD', 'ELECTRONICS'],
-    active: 'FOOD'
+    active: ''
 }
 
 export default (state = initialState, action) => {
