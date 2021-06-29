@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
-
-
+import {useDispatch, useSelector} from 'react-redux';
+import {add} from '../store/cart';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 const Products = (props) => {
+    const dispatch = useDispatch({add})
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -54,7 +55,9 @@ const Products = (props) => {
                                         </CardContent>
                                     </CardActionArea>
                                     <CardActions>
-                                        <Button size="small" color="primary">
+                                        <Button size="small" color="primary"
+                                        onClick={()=> dispatch(add(item))}
+                                        >
                                             Add to Cart
                                         </Button>
                                         <Button size="small" color="primary">
