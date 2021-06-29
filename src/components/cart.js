@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 const useStyles = makeStyles((theme) => ({
     title: {
-        color: 'white',
+        color: 'black',
     },
     manue: {
         right: 20,
@@ -25,6 +25,7 @@ export default function SimpleMenu(props) {
     })
     const dispatch = useDispatch({ toggle, remove })
     const handleClose = (e) => {
+        console.log(e);
         dispatch(remove(e))
     };
 
@@ -37,24 +38,29 @@ export default function SimpleMenu(props) {
                     aria-controls="menu-appbar"
                     aria-haspopup="true"
                     color="inherit"
-                ></IconButton> ({data.items.length})
+                >Cart</IconButton> ({data.items.length})
             </Button>
-            <Menu
-                id="simple-menu"
-                keepMounted
-                open={Boolean(data.button)}
-                onClose={(e) => dispatch(toggle())}
-                className={classes.manue}
-                style={{marginLeft: 1350, marginTop: -250 }}
-            >
-                {
-                    data.items.map((item, idx) => {
-                        return (<MenuItem key={idx}>
-                            {item.name} ({item.quantity}) <Button onClick={() => handleClose(item)}></Button>
-                        </MenuItem>)
-                    })
-                }
-            </Menu>
+            {data.items.length > 0 ? (
+                <Menu
+                    id="fade-menu"
+                    keepMounted
+                    open={Boolean(data.button)}
+                    onClose={(e) => dispatch(toggle())}
+                    className={classes.manue}
+                    style={{ marginLeft: 100, marginTop: 0 }}
+                >
+
+                    {
+                        data.items.map((item, idx) => {
+
+                            return (<MenuItem key={idx}>
+                                {item.name} ({item.quantity}) <Button onClick={() => handleClose(item)}>X</Button>
+                            </MenuItem>)
+                        })
+                    }
+                </Menu>
+
+            ) : []}
         </div>
     );
 }

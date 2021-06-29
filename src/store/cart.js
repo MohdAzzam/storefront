@@ -1,13 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-let init = [{
-    name: 'Apples',
-    description: 'fruit',
-    price: 5,
-    category: 'FOOD',
-    inventoryCount: 5,
-    src: 'https://source.unsplash.com/random?Apples',
-    quantity: 0
-}]
+let init = []
 
 export default (state = init, action) => {
     let { type, payload } = action;
@@ -35,6 +27,7 @@ export default (state = init, action) => {
         case "DELETE":
             let ids = false;
             let newState = state.map(el => {
+                
                 if (el.name === payload.name) {
                     el.quantity--
                     if (el.quantity === 0) {

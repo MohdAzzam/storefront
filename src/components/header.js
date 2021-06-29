@@ -29,10 +29,10 @@ export default function Header() {
         <AppBar className={classes.appbar} elevation={0}>
             <Toolbar className={classes.appbarWrapper}>
                 <h1 className={classes.appbarTitle}>Our Store</h1>
-                <IconButton>
+                {/* <IconButton>
                     <p>Cart <span>({data.items.length})</span></p>
-                </IconButton>
-                {/* <Cart /> */}
+                </IconButton> */}
+                <Cart />
             </Toolbar>
         </AppBar>
     );
