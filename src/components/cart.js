@@ -11,10 +11,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
         color: 'black',
     },
-    manue: {
-        right: 20,
-        top: 65
-    }
+
 }));
 export default function SimpleMenu(props) {
     const data = useSelector(state => {
@@ -54,7 +51,7 @@ export default function SimpleMenu(props) {
                         data.items.map((item, idx) => {
 
                             return (<MenuItem key={idx}>
-                                {item.name} ({item.quantity}) <Button onClick={() => handleClose(item)}>X</Button>
+                                {item.item} ({item.quantity}) <Button onClick={() => handleClose(item)}>X</Button>
                             </MenuItem>)
                         })
                     }
