@@ -6,8 +6,7 @@ export default (state = init, action) => {
 
     switch (type) {
         case "MENUTOGGLE":
-            let flag = !state
-            return flag;
+            return !state;
 
         default:
             return state;

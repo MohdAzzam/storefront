@@ -13,7 +13,6 @@ export default (state = init, action) => {
                 }
             })
             if (checked) {
-                console.log('in checked');
                 return state.map(el => {
                     if (el.name === payload.name) {
                         el.quantity += 1
