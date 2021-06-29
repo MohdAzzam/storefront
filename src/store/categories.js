@@ -4,11 +4,10 @@ let initialState = {
     active: ''
 }
 
+//reducer 
 export default (state = initialState, action) => {
     let { type, payload } = action;
-
     let { categories, active } = state;
-
     switch (type) {
         case 'SHOW':
             return { categories, active: payload }
@@ -19,7 +18,7 @@ export default (state = initialState, action) => {
 
 }
 
-
+// action 
 export const choose = (name) => {
 
     return {
